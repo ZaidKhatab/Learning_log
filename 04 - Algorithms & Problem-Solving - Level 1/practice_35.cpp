@@ -29,15 +29,20 @@ void printPiggyBankPennyAndDollar(stPiggyBankContent piggyBank)
     cout << "The number of dollars is: " << piggyBank.dollar << endl;
 }
 
-void printTotalPinneis(stPiggyBankContent piggyBank)
+int calculateTotalPennies(stPiggyBankContent piggyBank)
 {
     int totalPennies = piggyBank.penny + (piggyBank.nickel * 5) + (piggyBank.dime * 10) + (piggyBank.quarter * 25) + (piggyBank.dollar * 100);
+    return totalPennies;
+}
+
+void printTotalPinneis(int totalPennies)
+{
     cout << "The total number of pennies is: " << totalPennies << endl;
     cout << "The total amount in dollars is: $" << totalPennies / 100.0 << endl;
 }
 
 int main()
 {
-    printTotalPinneis(readPiggyBankContent(*(new stPiggyBankContent())));
+    printTotalPinneis(calculateTotalPennies(readPiggyBankContent(*(new stPiggyBankContent()))));
     return 0;
 }
