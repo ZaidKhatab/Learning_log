@@ -12,10 +12,8 @@ int readNumber()
 
 void printResult(int number)
 {
-    for(int i = number; i > 0; i--)
-    {
+    for (int i = number; i > 0; i--)
         cout << i << endl;
-    }
 }
 
 int main()
