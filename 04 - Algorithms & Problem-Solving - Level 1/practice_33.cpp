@@ -5,8 +5,13 @@ using namespace std;
 int readGrade()
 {
     int grade;
-    cout << "Enter a grade: ";
-    cin >> grade;
+
+    do
+    {
+        cout << "Enter a grade (0-100): ";
+        cin >> grade;
+    } while (grade < 0 || grade > 100);
+
     return grade;
 }
 
